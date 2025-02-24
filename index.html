@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParcelPro - Smart Parcel Management</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .feature-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <h1 class="text-2xl font-bold text-indigo-600">ParcelPro</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="index.html" class="text-gray-700 hover:text-indigo-600 transition">Home</a>
+                    <a href="track.html" class="text-gray-700 hover:text-indigo-600 transition">Track Parcel</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-indigo-600 transition">Contact</a>
+                    <button id="trackBtn"
+                        class="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 transition">
+                        Quick Track
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-16 bg-gradient-to-r from-indigo-500 to-purple-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
+            <div class="w-full md:w-1/2">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 animate-fade-in">
+                    Manage Your Parcels with Ease
+                </h1>
+                <p class="text-lg mb-6">
+                    Track, manage, and deliver your parcels efficiently with ParcelPro's smart solutions.
+                </p>
+                <div class="flex space-x-4">
+                    <input id="trackingInput" type="text" placeholder="Enter tracking number"
+                        class="px-4 py-2 rounded-md w-64 text-gray-800 focus:outline-none">
+                    <button id="trackNowBtn"
+                        class="bg-white text-indigo-600 px-6 py-2 rounded-md font-semibold hover:bg-gray-100 transition">
+                        Track Now
+                    </button>
+                </div>
+            </div>
+            <div class="hidden md:block w-1/2">
+                <img src="./images/img1.png" alt="Parcel Management" class="rounded-lg shadow-xl animate-slide-in">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Why Choose ParcelPro?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="feature-card bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-indigo-600 text-4xl mb-4">📦</div>
+                    <h3 class="text-xl font-semibold mb-2">Real-Time Tracking</h3>
+                    <p class="text-gray-600">Monitor your parcels' journey in real-time with live updates.</p>
+                </div>
+                <div class="feature-card bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-indigo-600 text-4xl mb-4">⚡</div>
+                    <h3 class="text-xl font-semibold mb-2">Fast Delivery</h3>
+                    <p class="text-gray-600">Ensure quick and reliable delivery with our optimized network.</p>
+                </div>
+                <div class="feature-card bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-indigo-600 text-4xl mb-4">🔒</div>
+                    <h3 class="text-xl font-semibold mb-2">Secure Handling</h3>
+                    <p class="text-gray-600">Your parcels are safe with our top-notch security measures.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing section -->
+
+
+    <section id="pricing" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Simple Pricing Plans</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <h3 class="text-xl font-semibold mb-4">Basic</h3>
+                    <p class="text-3xl font-bold text-indigo-600 mb-4">$9<span class="text-base text-gray-600">/mo</span>
+                    </p>
+                    <ul class="text-gray-600 mb-6">
+                        <li>10 Parcel Tracks</li>
+                        <li>Email Support</li>
+                    </ul>
+                    <button class="bg-indigo-600 text-white px-6 py-2 rounded-md hover:bg-indigo-700 transition">Get
+                        Started</button>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center border-2 border-indigo-600">
+                    <h3 class="text-xl font-semibold mb-4">Pro</h3>
+                    <p class="text-3xl font-bold text-indigo-600 mb-4">$29<span class="text-base text-gray-600">/mo</span>
+                    </p>
+                    <ul class="text-gray-600 mb-6">
+                        <li>50 Parcel Tracks</li>
+                        <li>Priority Support</li>
+                        <li>Real-Time Alerts</li>
+                    </ul>
+                    <button class="bg-indigo-600 text-white px-6 py-2 rounded-md hover:bg-indigo-700 transition">Get
+                        Started</button>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <h3 class="text-xl font-semibold mb-4">Enterprise</h3>
+                    <p class="text-3xl font-bold text-indigo-600 mb-4">$99<span class="text-base text-gray-600">/mo</span>
+                    </p>
+                    <ul class="text-gray-600 mb-6">
+                        <li>Unlimited Tracks</li>
+                        <li>24/7 Support</li>
+                        <li>Custom Integration</li>
+                    </ul>
+                    <button class="bg-indigo-600 text-white px-6 py-2 rounded-md hover:bg-indigo-700 transition">Get
+                        Started</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>© 2025 ParcelPro. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="scripts/script.js">
+        
+    </script>
+</body>
+
+</html>
