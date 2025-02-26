@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParcelPro - Contact Us</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .footer-gradient {
+        background: linear-gradient(135deg, #1e1b4b, #3b0764, #8b5cf6);
+      }
+      .footer-link {
+        transition: color 0.3s ease;
+      }
+      .footer-link:hover {
+        color: #dbeafe;
+      }
+      .social-icon {
+        transition: transform 0.3s ease, color 0.3s ease;
+      }
+      .social-icon:hover {
+        transform: scale(1.2);
+        color: #dbeafe;
+      }
+    
+    </style>
+</head>
+
+<body class="bg-gray-100">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <h1 class="text-2xl font-bold text-indigo-600">ParcelPro</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="index.html" class="text-gray-700 hover:text-indigo-600 transition">Home</a>
+                    <a href="track.html" class="text-gray-700 hover:text-indigo-600 transition">Track Parcel</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-indigo-600 transition">Contact</a>
+                    <a href="login.html" class="text-gray-700 hover:text-indigo-600 transition">Account</a>
+                    <button id="trackBtn"
+                        class="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 transition">
+                        Quick Track
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Section -->
+    <section class="pt-24 pb-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-3xl font-bold text-gray-800 mb-8 text-center">Contact Us</h1>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-4">Get in Touch</h2>
+                    <form id="contactForm">
+                        <div class="mb-4">
+                            <label class="block text-gray-700 mb-2" for="name">Name</label>
+                            <input type="text" id="name"
+                                class="w-full px-4 py-2 rounded-md border focus:outline-none focus:ring-2 focus:ring-indigo-600"
+                                required>
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 mb-2" for="email">Email</label>
+                            <input type="email" id="email"
+                                class="w-full px-4 py-2 rounded-md border focus:outline-none focus:ring-2 focus:ring-indigo-600"
+                                required>
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 mb-2" for="message">Message</label>
+                            <textarea id="message"
+                                class="w-full px-4 py-2 rounded-md border focus:outline-none focus:ring-2 focus:ring-indigo-600"
+                                rows="4" required></textarea>
+                        </div>
+                        <button type="submit"
+                            class="bg-indigo-600 text-white px-6 py-2 rounded-md hover:bg-indigo-700 transition w-full">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+                <div>
+                    <h2 class="text-xl font-semibold text-gray-800 mb-4">Contact Information</h2>
+                    <p class="text-gray-600 mb-2">📧 Email: support@parcelpro.com</p>
+                    <p class="text-gray-600 mb-2">📞 Phone: +1 (555) 123-4567</p>
+                    <p class="text-gray-600">📍 Address: 123 Delivery St, Parcel City</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-gradient text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center lg:text-left"
+          >
+            <!-- Brand Section -->
+            <div>
+              <h3 class="text-2xl font-bold mb-4">ParcelPro</h3>
+              <p class="text-gray-200 text-sm">Fast. Reliable. Worldwide.</p>
+            </div>
+  
+            <!-- Navigation Links -->
+            <div>
+              <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+              <ul class="space-y-2">
+                <li>
+                  <a href="index.html" class="footer-link text-gray-300">Home</a>
+                </li>
+                <li>
+                  <a href="track.html" class="footer-link text-gray-300"
+                    >Track Parcel</a
+                  >
+                </li>
+                <li>
+                    <a href="login.html" class="footer-link text-gray-300"
+                      >Account</a
+                    >
+                  </li>
+                <li>
+                  <a href="contact.html" class="footer-link text-gray-300"
+                    >Contact</a
+                  >
+                </li>
+                
+              </ul>
+            </div>
+  
+            <!-- Contact Info -->
+            <div>
+              <h4 class="text-lg font-semibold mb-4">Get in Touch</h4>
+              <p class="text-gray-300">
+                Email:
+                <a href="mailto:support@parcelpro.com" class="footer-link"
+                  >support@parcelpro.com</a
+                >
+              </p>
+              <p class="text-gray-300">
+                Phone:
+                <a href="tel:+8801234567890" class="footer-link"
+                  >+880 123 456 7890</a
+                >
+              </p>
+              <p class="text-gray-300">Address: Dhaka, Bangladesh</p>
+            </div>
+  
+            <!-- Social Media -->
+            <div>
+              <h4 class="text-lg font-semibold mb-4">Follow Us</h4>
+              <div class="flex justify-center lg:justify-start space-x-4">
+                <a href="#" class="social-icon text-gray-300">
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M12 2.04c-5.5 0-9.96 4.46-9.96 9.96 0 5.5 4.46 9.96 9.96 9.96s9.96-4.46 9.96-9.96c0-5.5-4.46-9.96-9.96-9.96zm0 1.5c4.69 0 8.46 3.77 8.46 8.46s-3.77 8.46-8.46 8.46-8.46-3.77-8.46-8.46 3.77-8.46 8.46-8.46zm-.75 3.75h-1.5v2.25h1.5v6h2.25v-6h1.5v-2.25h-1.5v-1.5c0-.83.67-1.5 1.5-1.5h1.5v-1.5h-1.5c-1.66 0-3 1.34-3 3v1.5z"
+                    />
+                  </svg>
+                </a>
+                <a href="#" class="social-icon text-gray-300">
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M23.25 4.56c-.85.38-1.76.63-2.72.75a4.74 4.74 0 0 0 2.08-2.61 9.47 9.47 0 0 1-3 1.15 4.73 4.73 0 0 0-8.06 4.31A13.39 13.39 0 0 1 1.67 3.15a4.73 4.73 0 0 0 1.46 6.31 4.7 4.7 0 0 1-2.14-.59v.06a4.73 4.73 0 0 0 3.79 4.64 4.7 4.7 0 0 1-2.13.08 4.73 4.73 0 0 0 4.42 3.28A9.48 9.48 0 0 1 .75 19.5a13.38 13.38 0 0 0 7.25 2.12c8.7 0 13.46-7.2 13.46-13.46 0-.21 0-.42-.01-.63A9.6 9.6 0 0 0 23.25 4.56z"
+                    />
+                  </svg>
+                </a>
+                <a href="#" class="social-icon text-gray-300">
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M12 2.04c-5.5 0-9.96 4.46-9.96 9.96 0 4.96 3.63 9.06 8.37 9.81v-6.94h-2.52v-2.87h2.52v-2.19c0-2.49 1.48-3.87 3.75-3.87 1.08 0 2.22.19 2.22.19v2.44h-1.25c-1.23 0-1.61.77-1.61 1.56v1.87h2.75l-.44 2.87h-2.31v6.94c4.74-.75 8.37-4.85 8.37-9.81 0-5.5-4.46-9.96-9.96-9.96z"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Copyright -->
+          <div class="mt-8 text-center border-t border-gray-700 pt-4">
+            <p class="text-gray-300 text-sm">
+              © 2025 ParcelPro. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const trackBtn = document.getElementById('trackBtn');
+            const contactForm = document.getElementById('contactForm');
+
+            trackBtn.addEventListener('click', () => {
+                const trackingNumber = prompt('Enter your tracking number:');
+                if (trackingNumber) {
+                    window.location.href = `track.html?tracking=${trackingNumber}`;
+                }
+            });
+
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Thank you for your message! We’ll get back to you soon.');
+                contactForm.reset();
+            });
+        });
+    </script>
+</body>
+
+</html>

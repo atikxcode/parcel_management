@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParcelPro - Smart Parcel Management</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .feature-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Timeline Custom Styles */
+        .timeline-step {
+            transition: all 0.4s ease;
+        }
+
+        .timeline-step:hover {
+            transform: scale(1.1) translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .timeline-line {
+            position: absolute;
+            height: 4px;
+            background: linear-gradient(to right, #4f46e5, #7c3aed);
+            transition: width 0.5s ease;
+        }
+
+        .timeline-icon {
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .timeline-step:hover .timeline-icon {
+            transform: rotate(360deg);
+            color: #ffffff;
+        }
+
+        .footer-gradient {
+        background: linear-gradient(135deg, #1e1b4b, #3b0764, #8b5cf6);
+      }
+      .footer-link {
+        transition: color 0.3s ease;
+      }
+      .footer-link:hover {
+        color: #dbeafe;
+      }
+      .social-icon {
+        transition: transform 0.3s ease, color 0.3s ease;
+      }
+      .social-icon:hover {
+        transform: scale(1.2);
+        color: #dbeafe;
+      }
+
+   
+    </style>
+</head>
+
+<body class="bg-gray-100">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <h1 class="text-2xl font-bold text-indigo-600">ParcelPro</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="index.html" class="text-gray-700 hover:text-indigo-600 transition">Home</a>
+                    <a href="track.html" class="text-gray-700 hover:text-indigo-600 transition">Track Parcel</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-indigo-600 transition">Contact</a>
+                    <a href="login.html" class="text-gray-700 hover:text-indigo-600 transition">Account</a>
+                    <button id="trackBtn"
+                        class="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 transition">
+                        Quick Track
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-16 bg-gradient-to-r from-indigo-500 to-purple-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
+            <div class="w-full md:w-1/2">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 animate-fade-in">
+                    Manage Your Parcels with Ease
+                </h2>
+                <p class="text-lg mb-6">
+                    Track, manage, and deliver your parcels efficiently with ParcelPro's smart solutions.
+                </p>
+                <div class="flex space-x-4">
+                    <input id="trackingInput" type="text" placeholder="Enter tracking number"
+                        class="px-4 py-2 rounded-md w-64 text-gray-800 focus:outline-none">
+                    <button id="trackNowBtn"
+                        class="bg-white text-indigo-600 px-6 py-2 rounded-md font-semibold hover:bg-gray-100 transition">
+                        Track Now
+                    </button>
+                </div>
+            </div>
+            <div class="hidden md:block w-1/2">
+                <img src="./images/img1.png" alt="Parcel Management" class="rounded-lg shadow-xl animate-slide-in">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Why Choose ParcelPro?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="feature-card bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-indigo-600 text-4xl mb-4">📦</div>
+                    <h3 class="text-xl font-semibold mb-2">Real-Time Tracking</h3>
+                    <p class="text-gray-600">Monitor your parcels' journey in real-time with live updates.</p>
+                </div>
+                <div class="feature-card bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-indigo-600 text-4xl mb-4">⚡</div>
+                    <h3 class="text-xl font-semibold mb-2">Fast Delivery</h3>
+                    <p class="text-gray-600">Ensure quick and reliable delivery with our optimized network.</p>
+                </div>
+                <div class="feature-card bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-indigo-600 text-4xl mb-4">🔒</div>
+                    <h3 class="text-xl font-semibold mb-2">Secure Handling</h3>
+                    <p class="text-gray-600">Your parcels are safe with our top-notch security measures.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Simple Pricing Plans</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md text-center hover:scale-110 transition all">
+                    <h3 class="text-xl font-semibold mb-4">Basic</h3>
+                    <p class="text-3xl font-bold text-indigo-600 mb-4">$9<span class="text-base text-gray-600">/mo</span></p>
+                    <ul class="text-gray-600 mb-6">
+                        <li>10 Parcel Tracks</li>
+                        <li>Email Support</li>
+                    </ul>
+                    <button class="bg-indigo-600 text-white px-6 py-2 rounded-md hover:bg-indigo-700 transition">Get Started</button>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center border-2 border-indigo-600 hover:scale-110 transition all">
+                    <h3 class="text-xl font-semibold mb-4">Pro</h3>
+                    <p class="text-3xl font-bold text-indigo-600 mb-4">$29<span class="text-base text-gray-600">/mo</span></p>
+                    <ul class="text-gray-600 mb-6">
+                        <li>50 Parcel Tracks</li>
+                        <li>Priority Support</li>
+                        <li>Real-Time Alerts</li>
+                    </ul>
+                    <button class="bg-indigo-600 text-white px-6 py-2 rounded-md hover:bg-indigo-700 transition">Get Started</button>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center hover:scale-110 transition all">
+                    <h3 class="text-xl font-semibold mb-4">Enterprise</h3>
+                    <p class="text-3xl font-bold text-indigo-600 mb-4">$99<span class="text-base text-gray-600">/mo</span></p>
+                    <ul class="text-gray-600 mb-6">
+                        <li>Unlimited Tracks</li>
+                        <li>24/7 Support</li>
+                        <li>Custom Integration</li>
+                    </ul>
+                    <button class="bg-indigo-600 text-white px-6 py-2 rounded-md hover:bg-indigo-700 transition">Get Started</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parcel Statistics Section -->
+    <section id="statistics" class="py-16 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12">Our Impact in Numbers</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="text-5xl font-bold mb-4 counter" data-target="1500000" data-speed="2000">0</div>
+                    <p class="text-lg">Parcels Delivered</p>
+                    <p class="text-sm opacity-75">Across 50+ countries</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl font-bold mb-4 counter" data-target="98" data-speed="1500">0</div>
+                    <p class="text-lg">Delivery Success Rate</p>
+                    <p class="text-sm opacity-75">On-time deliveries</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl font-bold mb-4 counter" data-target="25000" data-speed="2000">0</div>
+                    <p class="text-lg">Happy Customers</p>
+                    <p class="text-sm opacity-75">Businesses & individuals</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl font-bold mb-4 counter" data-target="24" data-speed="1500">0</div>
+                    <p class="text-lg">Average Hours</p>
+                    <p class="text-sm opacity-75">For cross-country delivery</p>
+                </div>
+            </div>
+            <div class="mt-12 text-center">
+                <button id="statsLearnMore" class="bg-white text-indigo-600 px-6 py-2 rounded-md font-semibold hover:bg-gray-100 transition">
+                    Learn More About Our Stats
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Network Section -->
+    <section id="global-network" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Our Global Network</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="relative w-full h-96 bg-gray-200 rounded-lg overflow-hidden">
+                        <div id="mapOverlay" class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 transition-opacity duration-300">
+                            <button id="exploreNetwork" class="bg-indigo-600 text-white px-6 py-3 rounded-md hover:bg-indigo-700 transition">
+                                Explore Our Network
+                            </button>
+                        </div>
+                        <div class="flex items-center justify-center text-gray-500">
+                            <img src="images/world_map.avif" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold text-indigo-600 mb-4">Worldwide Coverage</h3>
+                    <p class="text-gray-600 mb-6">With distribution centers strategically located across 6 continents, we ensure your parcels reach their destination efficiently.</p>
+                    <ul class="space-y-4">
+                        <li class="flex items-center">
+                            <span class="text-indigo-600 text-2xl mr-3">🌍</span>
+                            <span class="text-gray-700">50+ Countries Served</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-indigo-600 text-2xl mr-3">🏢</span>
+                            <span class="text-gray-700">200+ Distribution Centers</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-indigo-600 text-2xl mr-3">✈️</span>
+                            <span class="text-gray-700">1000+ Daily Flights</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Delivery Timeline Journey Section -->
+    <section id="timeline-journey" class="py-16 bg-gradient-to-b from-gray-50 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Your Parcel's Journey</h2>
+            <div class="relative">
+                <div id="timelineLine" class="timeline-line w-0 top-16 left-0"></div>
+                <div class="space-y-16">
+                    <div class="timeline-step bg-white p-6 rounded-lg shadow-md flex items-center relative z-10">
+                        <div class="timeline-icon text-indigo-600 text-4xl mr-4">📦</div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800">Order Placed</h3>
+                            <p class="text-gray-600">Your parcel begins its journey with instant confirmation.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-step bg-white p-6 rounded-lg shadow-md flex items-center relative z-10">
+                        <div class="timeline-icon text-indigo-600 text-4xl mr-4">🏪</div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800">Warehouse Processing</h3>
+                            <p class="text-gray-600">AI-sorted and packed within hours.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-step bg-white p-6 rounded-lg shadow-md flex items-center relative z-10">
+                        <div class="timeline-icon text-indigo-600 text-4xl mr-4">✈️</div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800">In Transit</h3>
+                            <p class="text-gray-600">Real-time tracking across our global network.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-step bg-white p-6 rounded-lg shadow-md flex items-center relative z-10">
+                        <div class="timeline-icon text-indigo-600 text-4xl mr-4">🚚</div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800">Last Mile Delivery</h3>
+                            <p class="text-gray-600">Optimized local delivery to your door.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-step bg-white p-6 rounded-lg shadow-md flex items-center relative z-10">
+                        <div class="timeline-icon text-indigo-600 text-4xl mr-4">✅</div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800">Delivered</h3>
+                            <p class="text-gray-600">Safe arrival with proof of delivery.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <!-- <button id="animateTimeline" class="bg-indigo-600 text-white px-6 py-2 rounded-md hover:bg-indigo-700 transition">
+                    Watch the Journey
+                </button> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-gradient text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center lg:text-left"
+          >
+            <!-- Brand Section -->
+            <div>
+              <h3 class="text-2xl font-bold mb-4">ParcelPro</h3>
+              <p class="text-gray-200 text-sm">Fast. Reliable. Worldwide.</p>
+            </div>
+  
+            <!-- Navigation Links -->
+            <div>
+              <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+              <ul class="space-y-2">
+                <li>
+                  <a href="index.html" class="footer-link text-gray-300">Home</a>
+                </li>
+                <li>
+                  <a href="track.html" class="footer-link text-gray-300"
+                    >Track Parcel</a
+                  >
+                </li>
+                <li>
+                    <a href="login.html" class="footer-link text-gray-300"
+                      >Account</a
+                    >
+                  </li>
+                <li>
+                  <a href="contact.html" class="footer-link text-gray-300"
+                    >Contact</a
+                  >
+                </li>
+                
+              </ul>
+            </div>
+  
+            <!-- Contact Info -->
+            <div>
+              <h4 class="text-lg font-semibold mb-4">Get in Touch</h4>
+              <p class="text-gray-300">
+                Email:
+                <a href="mailto:support@parcelpro.com" class="footer-link"
+                  >support@parcelpro.com</a
+                >
+              </p>
+              <p class="text-gray-300">
+                Phone:
+                <a href="tel:+8801234567890" class="footer-link"
+                  >+880 123 456 7890</a
+                >
+              </p>
+              <p class="text-gray-300">Address: Dhaka, Bangladesh</p>
+            </div>
+  
+            <!-- Social Media -->
+            <div>
+              <h4 class="text-lg font-semibold mb-4">Follow Us</h4>
+              <div class="flex justify-center lg:justify-start space-x-4">
+                <a href="#" class="social-icon text-gray-300">
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M12 2.04c-5.5 0-9.96 4.46-9.96 9.96 0 5.5 4.46 9.96 9.96 9.96s9.96-4.46 9.96-9.96c0-5.5-4.46-9.96-9.96-9.96zm0 1.5c4.69 0 8.46 3.77 8.46 8.46s-3.77 8.46-8.46 8.46-8.46-3.77-8.46-8.46 3.77-8.46 8.46-8.46zm-.75 3.75h-1.5v2.25h1.5v6h2.25v-6h1.5v-2.25h-1.5v-1.5c0-.83.67-1.5 1.5-1.5h1.5v-1.5h-1.5c-1.66 0-3 1.34-3 3v1.5z"
+                    />
+                  </svg>
+                </a>
+                <a href="#" class="social-icon text-gray-300">
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M23.25 4.56c-.85.38-1.76.63-2.72.75a4.74 4.74 0 0 0 2.08-2.61 9.47 9.47 0 0 1-3 1.15 4.73 4.73 0 0 0-8.06 4.31A13.39 13.39 0 0 1 1.67 3.15a4.73 4.73 0 0 0 1.46 6.31 4.7 4.7 0 0 1-2.14-.59v.06a4.73 4.73 0 0 0 3.79 4.64 4.7 4.7 0 0 1-2.13.08 4.73 4.73 0 0 0 4.42 3.28A9.48 9.48 0 0 1 .75 19.5a13.38 13.38 0 0 0 7.25 2.12c8.7 0 13.46-7.2 13.46-13.46 0-.21 0-.42-.01-.63A9.6 9.6 0 0 0 23.25 4.56z"
+                    />
+                  </svg>
+                </a>
+                <a href="#" class="social-icon text-gray-300">
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M12 2.04c-5.5 0-9.96 4.46-9.96 9.96 0 4.96 3.63 9.06 8.37 9.81v-6.94h-2.52v-2.87h2.52v-2.19c0-2.49 1.48-3.87 3.75-3.87 1.08 0 2.22.19 2.22.19v2.44h-1.25c-1.23 0-1.61.77-1.61 1.56v1.87h2.75l-.44 2.87h-2.31v6.94c4.74-.75 8.37-4.85 8.37-9.81 0-5.5-4.46-9.96-9.96-9.96z"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Copyright -->
+          <div class="mt-8 text-center border-t border-gray-700 pt-4">
+            <p class="text-gray-300 text-sm">
+              © 2025 ParcelPro. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
+
+    <!-- JavaScript -->
+    <script src="scripts/script.js">
+        
+    </script>
+
+    <!-- Statistics JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const counters = document.querySelectorAll('.counter');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counter = entry.target;
+                        const target = parseInt(counter.getAttribute('data-target'));
+                        const speed = parseInt(counter.getAttribute('data-speed'));
+                        let count = 0;
+                        const increment = target / (speed / 16);
+
+                        const updateCounter = () => {
+                            count += increment;
+                            if (count < target) {
+                                counter.textContent = Math.floor(count).toLocaleString();
+                                requestAnimationFrame(updateCounter);
+                            } else {
+                                counter.textContent = target.toLocaleString();
+                                if (target === 98) counter.textContent += '%';
+                            }
+                        };
+
+                        updateCounter();
+                        observer.unobserve(counter);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            counters.forEach(counter => observer.observe(counter));
+
+            const learnMoreBtn = document.getElementById('statsLearnMore');
+            learnMoreBtn.addEventListener('click', () => {
+                alert('Our statistics are based on real-time data from our global network:\n' +
+                      '- 1.5M+ parcels delivered since inception\n' +
+                      '- 98% on-time delivery rate maintained consistently\n' +
+                      '- 25,000+ active customers worldwide\n' +
+                      '- 24-hour average delivery for cross-country shipments');
+            });
+        });
+    </script>
+
+    <!-- Global Network JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mapOverlay = document.getElementById('mapOverlay');
+            const exploreBtn = document.getElementById('exploreNetwork');
+            const mapContainer = mapOverlay.parentElement;
+
+            mapContainer.addEventListener('mouseenter', () => {
+                mapOverlay.classList.remove('opacity-0');
+                mapOverlay.classList.add('opacity-100');
+            });
+
+            mapContainer.addEventListener('mouseleave', () => {
+                mapOverlay.classList.remove('opacity-100');
+                mapOverlay.classList.add('opacity-0');
+            });
+
+            exploreBtn.addEventListener('click', () => {
+                alert('Our Global Network Includes:\n' +
+                      '- North America: 75+ centers\n' +
+                      '- Europe: 60+ centers\n' +
+                      '- Asia: 40+ centers\n' +
+                      '- South America: 15+ centers\n' +
+                      '- Africa: 10+ centers\n' +
+                      '- Australia: 5+ centers\n\n' +
+                      'Connected by daily flights and ground transport');
+            });
+        });
+    </script>
+
+    <!-- Delivery Timeline Journey JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const timelineLine = document.getElementById('timelineLine');
+            const timelineSteps = document.querySelectorAll('.timeline-step');
+            const animateBtn = document.getElementById('animateTimeline');
+
+            // Set initial timeline line position
+            timelineLine.style.left = `${timelineSteps[0].offsetLeft + 20}px`;
+
+            function animateTimeline() {
+                timelineLine.style.width = '0px';
+                timelineSteps.forEach(step => {
+                    step.classList.remove('bg-indigo-600', 'text-white');
+                    step.querySelector('.timeline-icon').classList.remove('text-white');
+                });
+
+                let delay = 0;
+                timelineSteps.forEach((step, index) => {
+                    setTimeout(() => {
+                        step.classList.add('bg-indigo-600', 'text-white');
+                        step.querySelector('.timeline-icon').classList.add('text-white');
+                        if (index === timelineSteps.length - 1) {
+                            timelineLine.style.width = `${step.offsetLeft + step.offsetWidth - timelineSteps[0].offsetLeft - 20}px`;
+                        }
+                    }, delay);
+                    delay += 800;
+                });
+            }
+
+            // Intersection Observer for initial animation
+            const observer = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting) {
+                    setTimeout(() => {
+                        timelineLine.style.width = `${timelineSteps[timelineSteps.length - 1].offsetLeft + timelineSteps[timelineSteps.length - 1].offsetWidth - timelineSteps[0].offsetLeft - 20}px`;
+                    }, 500);
+                    observer.unobserve(entries[0].target);
+                }
+            }, { threshold: 0.3 });
+
+            observer.observe(document.getElementById('timeline-journey'));
+
+            // Hover effects
+            timelineSteps.forEach(step => {
+                step.addEventListener('mouseenter', () => {
+                    step.classList.add('bg-indigo-600', 'text-white');
+                    step.querySelector('.timeline-icon').classList.add('text-white');
+                });
+                step.addEventListener('mouseleave', () => {
+                    if (!step.classList.contains('active')) {
+                        step.classList.remove('bg-indigo-600', 'text-white');
+                        step.querySelector('.timeline-icon').classList.remove('text-white');
+                    }
+                });
+            });
+
+            // Button animation trigger
+            animateBtn.addEventListener('click', animateTimeline);
+        });
+    </script>
+</body>
+
+</html>
